@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_navigation"
+    app:startDestination="@id/satellites">
+
+    <fragment
+        android:id="@+id/satellites"
+        android:name="burak.ceylan.satellitestrackapp.ui.fragments.Satellites"
+        android:label="fragment_satellites"
+        tools:layout="@layout/fragment_satellites" >
+        <action
+            android:id="@+id/action_satellites_to_satelliteDetail"
+            app:destination="@id/satelliteDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/satelliteDetail"
+        android:name="burak.ceylan.satellitestrackapp.ui.fragments.SatelliteDetail"
+        android:label="fragment_satellite_detail"
+        tools:layout="@layout/fragment_satellite_detail" >
+        <action
+            android:id="@+id/action_satelliteDetail_to_satellites"
+            app:destination="@id/satellites" />
+        <argument
+            android:name="Uuid"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/gray"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.Satellites">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray"
+        android:layout_marginStart="@dimen/_25sdp"
+        android:layout_marginEnd="@dimen/_25sdp"
+        android:layout_marginTop="@dimen/_25sdp">
+
+        <EditText
+            android:id="@+id/edText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_edittext"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:paddingStart="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:hint="Search"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            app:layout_constraintTop_toTopOf="parent"
+            android:drawableLeft="@drawable/ic_baseline_search_24"
+            app:layout_constraintBottom_toTopOf="@+id/rvSatellite"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSatellite"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:itemCount="3"
+            tools:listitem="@layout/row_satellite"
+            />
+
+        <ProgressBar
+            android:id="@+id/pbSatellite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>
